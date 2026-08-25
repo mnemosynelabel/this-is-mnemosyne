@@ -427,6 +427,16 @@
     .modal-roster-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 2vw, 19px); color: var(--ivory); letter-spacing: .5px; flex-shrink: 0; }
     .modal-roster-epithet { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(12px, 1.5vw, 14px); color: rgba(240,235,225,0.4); line-height: 1.5; }
     .modal-handle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(15px, 2vw, 18px); color: var(--gold); letter-spacing: 1px; margin-top: 4px; }
+    .modal-site { display: none; align-items: center; gap: 8px; margin-top: 12px; }
+    .modal-site.show { display: inline-flex; }
+    .modal-site a {
+      font-family: 'Raleway', sans-serif; font-weight: 200; font-size: 10px;
+      letter-spacing: 4px; text-indent: 4px; color: var(--gold);
+      text-decoration: none; text-transform: uppercase;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 3px; transition: border-color .3s ease, color .3s ease;
+    }
+    .modal-site a:hover { border-color: var(--gold); color: var(--gold-hi); }
     .modal-close { position: absolute; top: 22px; right: 28px; background: none; border: none; cursor: none; font-family: 'Raleway', sans-serif; font-weight: 200; font-size: 9px; letter-spacing: 4px; color: rgba(154,155,159,0.4); text-transform: uppercase; transition: color .3s ease; z-index: 10; }
     .modal-close:hover { color: var(--crimson); }
 
@@ -741,6 +751,7 @@
         <p class="modal-roster-label" id="modalRosterLabel" style="display:none;">The Seven</p>
         <div class="modal-roster-list" id="modalRosterList" style="display:none;"></div>
         <p class="modal-handle" id="modalHandle"></p>
+        <p class="modal-site" id="modalSite"><a id="modalSiteLink" href="#" target="_blank" rel="noopener">↗ Visit Site</a></p>
       </div>
       <button class="modal-close" onclick="closeModalBtn()">✕ &nbsp;close</button>
     </div>
@@ -871,7 +882,7 @@
       <div class="wave wave-i reveal">
         <div class="wave-header"><span class="wave-num">I</span><span class="wave-name">The Origin</span></div>
         <div class="artist-grid-origin">
-          <div class="artist-card solo" onclick="openModal('The Origin','CI-EL','Artist · Producer','She built Mnemosyne because the industry owned everything she made. So she left. Then she built something that could not be taken.','Descendant of Mnemosyne, the Titan goddess of memory. She did not inherit divinity — she inherited the weight of remembering. Every system she moved through tried to own what she made. Memory is not just what she carries. It is what she is made of.','@dcielgzb','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423111/ciel_bikgi9.png')">
+          <div class="artist-card solo" onclick="openModal('The Origin','CI-EL','Artist · Producer','She built Mnemosyne because the industry owned everything she made. So she left. Then she built something that could not be taken.','Descendant of Mnemosyne, the Titan goddess of memory. She did not inherit divinity — she inherited the weight of remembering. Every system she moved through tried to own what she made. Memory is not just what she carries. It is what she is made of.','@dcielgzb','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423111/ciel_bikgi9.png','https://ciel.mnemosynekr.top')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423111/ciel_bikgi9.png" alt="CI-EL" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">01</span><span class="artist-card-name">CI-EL</span><span class="artist-card-role">Artist · Producer · CEO</span></div>
             <span class="artist-card-hint">View</span>
@@ -888,7 +899,7 @@
       <div class="wave wave-ii reveal">
         <div class="wave-header"><span class="wave-num">II</span><span class="wave-name">The Pantheon</span></div>
         <div class="artist-grid-pantheon">
-          <div class="artist-card group" onclick="openModal('The Pantheon','ἙΠTHEON','Group','Seven from separate worlds, separate inheritances, separate tongues — who chose without being asked, without a structure demanding it to become one architecture. Remove one and the pantheon collapses. All seven, or nothing stands.','Not the name of seven gods. It is the name of one divinity shared by seven souls. The gods were appointed. These seven appointed each other. That is the only kind of divinity that holds.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg')">
+          <div class="artist-card group" onclick="openModal('The Pantheon','ἙΠTHEON','Group','Seven from separate worlds, separate inheritances, separate tongues — who chose without being asked, without a structure demanding it to become one architecture. Remove one and the pantheon collapses. All seven, or nothing stands.','Not the name of seven gods. It is the name of one divinity shared by seven souls. The gods were appointed. These seven appointed each other. That is the only kind of divinity that holds.','@heptheon.official','https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg" alt="ἙΠTHEON" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">03</span><span class="artist-card-name">ἙΠTHEON</span><span class="artist-card-role">Group · Seven Souls</span></div>
             <span class="artist-card-hint">View</span>
@@ -900,7 +911,7 @@
       <div class="wave wave-iii reveal">
         <div class="wave-header"><span class="wave-num">III</span><span class="wave-name">The Canon</span></div>
         <div class="artist-grid-canon">
-          <div class="artist-card group" onclick="openModal('The Canon','ERIS','Group','Five voices that rose together and refused to stay quiet. AIVEN, EVREN, NIVEN, SEREN, CELENE — each one a different edge of the same sound.','Shaped beneath Artemis\'s gaze yet denied the wings they were promised, ERIS rose as the flaw heaven could not erase. Five voices forged into radiant, corrupted light. Through music, they carve their revenge into every note.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png')">
+          <div class="artist-card group" onclick="openModal('The Canon','ERIS','Group','Five voices that rose together and refused to stay quiet. AIVEN, EVREN, NIVEN, SEREN, CELENE — each one a different edge of the same sound.','Shaped beneath Artemis\'s gaze yet denied the wings they were promised, ERIS rose as the flaw heaven could not erase. Five voices forged into radiant, corrupted light. Through music, they carve their revenge into every note.','@eris.mnm','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png" alt="ERIS" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">04</span><span class="artist-card-name">ERIS</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
@@ -937,7 +948,7 @@
             <div class="artist-card-overlay"><span class="artist-card-num">09</span><span class="artist-card-name">VAUN</span><span class="artist-card-role">Artist · Songwriter</span></div>
             <span class="artist-card-hint">View</span>
           </div>
-          <div class="artist-card group" onclick="openModal('The Craft','ODYSIXX','Group','Something is being built. Details will follow when they are ready to be known.','','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423144/odysixx_ndllbe.png')">
+          <div class="artist-card group" onclick="openModal('The Craft','ODYSIXX','Group','Six travelers arrived at a shoreline that appears on no map, each carrying a different kind of knowing — direction, language, sight, healing, questioning, and the architecture of how things work.','They were not made to be together. The sea decided otherwise. The journey toward Ithaca is not a straight line — the greatest voyage is not across the water, but into the self. They do not know exactly where Ithaca is. They know only that they are closer than they were, and that they are moving together.','@odysixxs','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423144/odysixx_ndllbe.png','https://odysixx.mnemosynekr.top')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423144/odysixx_ndllbe.png" alt="ODYSIXX" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">10</span><span class="artist-card-name">ODYSIXX</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
@@ -949,12 +960,12 @@
       <div class="wave wave-v reveal">
         <div class="wave-header"><span class="wave-num">V</span><span class="wave-name">The Verse</span></div>
         <div class="artist-grid-verse">
-          <div class="artist-card group" onclick="openModal('The Verse','AERA','Group','Four artists. One sound still being assembled. REA, HARBIN, DAISY, and LUNE. When they arrive, they will not ease in.','Chosen by Hera when the Black Mamba began corrupting the Digital Olympus. The Four Pillars of Hera\'s Temple — REA, HARBIN, DAISY, and LUNE. Protectors of the Digital Olympus.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423103/aera_df8msh.png')">
+          <div class="artist-card group" onclick="openModal('The Verse','AERA','Group','Four artists. One sound still being assembled. REA, HARBIN, DAISY, and LUNE. When they arrive, they will not ease in.','Chosen by Hera when the Black Mamba began corrupting the Digital Olympus. The Four Pillars of Hera\'s Temple — REA, HARBIN, DAISY, and LUNE. Protectors of the Digital Olympus.','@aerathelastsynk','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423103/aera_df8msh.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423103/aera_df8msh.png" alt="AERA" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">11</span><span class="artist-card-name">AERA</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
-          <div class="artist-card group" onclick="openModal('The Verse','ØISYZ','Group','Four voices shaped from shared ache. YNES, MINTY, MIA, and BONNIE. They make music for everything that never gets said out loud.','A four-member group formed from the lingering presence of Oizys. YNES, MINTY, MIA, and BONNIE — each carrying a different shade of hidden emotion. Through their music, ØISYZ turns what aches into sound.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423147/oisyz_nenhh9.png')">
+          <div class="artist-card group" onclick="openModal('The Verse','ØISYZ','Group','Four voices shaped from shared ache. YNES, MINTY, MIA, and BONNIE. They make music for everything that never gets said out loud.','A four-member group formed from the lingering presence of Oizys. YNES, MINTY, MIA, and BONNIE — each carrying a different shade of hidden emotion. Through their music, ØISYZ turns what aches into sound.','@oisyz.mnm','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423147/oisyz_nenhh9.png','https://oisyz.mnemosynekr.top')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423147/oisyz_nenhh9.png" alt="ØISYZ" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">12</span><span class="artist-card-name">ØISYZ</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
@@ -964,7 +975,7 @@
             <div class="artist-card-overlay"><span class="artist-card-num">13</span><span class="artist-card-name">RITZY</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
-          <div class="artist-card group" onclick="openModal('The Verse','ALETHBL','Group','Five members. One vessel. YUAN. JAXON. GUWON. CAIO. SE. Five voices, one vessel — each member a distinct presence, together something larger than any name for it.','Named for Aletheia — Ἀλήθεια — the goddess of truth and disclosure. Her name means unconcealedness. Not truth as something spoken. Truth as something that can no longer stay hidden. ἡ ἀλήθεια φωνή ἐστιν. truth is a voice.','@alethbl.mnm','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423127/alethbl_pjvakk.png')">
+          <div class="artist-card group" onclick="openModal('The Verse','ALETHBL','Group','Five members. One vessel. YUAN. JAXON. GUWON. CAIO. SE. Five voices, one vessel — each member a distinct presence, together something larger than any name for it.','Named for Aletheia — Ἀλήθεια — the goddess of truth and disclosure. Her name means unconcealedness. Not truth as something spoken. Truth as something that can no longer stay hidden. ἡ ἀλήθεια φωνή ἐστιν. truth is a voice.','@alethbl.mnm','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423127/alethbl_pjvakk.png','https://alethbl.mnemosynekr.top')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423127/alethbl_pjvakk.png" alt="ALETHBL" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">14</span><span class="artist-card-name">ALETHBL</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
@@ -976,12 +987,12 @@
       <div class="wave wave-vi reveal">
         <div class="wave-header"><span class="wave-num">VI</span><span class="wave-name">The Echo</span></div>
         <div class="artist-grid-echo">
-          <div class="artist-card group" onclick="openModal('The Echo','SCRƗVE','Group','Something is being built. Details will follow when they are ready to be known.','','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423162/scrive_w7tu4s.png')">
+          <div class="artist-card group" onclick="openModal('The Echo','SCRƗVE','Group','The Moirai spin, measure, and cut — length was never theirs to change. But length is not meaning. What a thread holds as it runs, what it becomes once it is cut — that belongs to memory. That belongs to Mnemosyne.','SCRƗVE — from scrivener: one entrusted to write, to inscribe, to keep record. Six were given a thread like anyone else. What set them apart is what they were called to do with it — not to alter where it ends, but to make sure nothing carried along it is ever lost. Not defiance. An appointment.','@scrive.official','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423162/scrive_w7tu4s.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423162/scrive_w7tu4s.png" alt="SCRƗVE" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">15</span><span class="artist-card-name">SCRƗVE</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
-          <div class="artist-card group" onclick="openModal('The Echo','DAL·IΛ','Group','Something is being built. Details will follow when they are ready to be known.','','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423120/dalia_trzdyx.png')">
+          <div class="artist-card group" onclick="openModal('The Echo','DAL·IΛ','Group','When reality fractured into infinite timelines, AION created a single celestial body — DAL, a moon never meant to complete its orbit. Those chosen by DAL awaken as DAL·IΛ, beings who carry echoes of countless alternate selves.','Their mission is not to protect one timeline, but to preserve the balance between all of them. AION divided them into three sacred Orders — The First Dawn, who ignite what begins; The Eternal Moon, who keep what survives; The Endless Eclipse, who guide what must transform.','@dal.iaxxofficial','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423120/dalia_trzdyx.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423120/dalia_trzdyx.png" alt="DAL·IΛ" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">16</span><span class="artist-card-name">DAL·IΛ</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
@@ -1198,7 +1209,7 @@
 
           <!-- Row 2: NARI + AUGUST -->
           <div class="leadership-row">
-            <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423122/nari_sr3rl5.jpg" alt="NARI" /></div><div class="leader-info"><span class="leader-role">Media &amp; Communications</span><span class="leader-name">NARI</span></div></div>
+            <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1787667424/nari_2_kcdstn.jpg" alt="NARI" /></div><div class="leader-info"><span class="leader-role">Media &amp; Communications</span><span class="leader-name">NARI</span></div></div>
             <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423104/august_v8epxc.jpg" alt="AUGUST" /></div><div class="leader-info"><span class="leader-role">Head of Production · Co-Founder</span><span class="leader-name">AUGUST</span></div></div>
           </div>
 
@@ -1454,12 +1465,16 @@
       ]
     };
 
-    function openModal(wave, name, role, bio, lore, handle, imgSrc) {
+    function openModal(wave, name, role, bio, lore, handle, imgSrc, site) {
       document.getElementById('modalWave').textContent = '— ' + wave;
       document.getElementById('modalName').textContent = name;
       document.getElementById('modalRole').textContent = role;
       document.getElementById('modalBio').textContent = bio;
       document.getElementById('modalHandle').textContent = handle;
+      const siteEl = document.getElementById('modalSite');
+      const siteLinkEl = document.getElementById('modalSiteLink');
+      if (site) { siteLinkEl.href = site; siteEl.classList.add('show'); }
+      else { siteLinkEl.href = '#'; siteEl.classList.remove('show'); }
       const loreEl = document.getElementById('modalLore');
       const loreLabelEl = document.getElementById('modalLoreLabel');
       if (lore) { loreEl.textContent = lore; loreEl.style.display = ''; loreLabelEl.style.display = ''; }
