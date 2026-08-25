@@ -29,6 +29,7 @@
       --gold: #C9A84C; --gold-hi: #D4B460; --gold-dim: rgba(201,168,76,0.12);
       --gold-line: rgba(201,168,76,0.2); --ivory: #F0EBE1; --ivory-dim: rgba(240,235,225,0.6);
       --silver: #9A9B9F; --silver-dim: rgba(154,155,159,0.4);
+      --jade: #00A86B; --jade-dim: rgba(0,168,107,0.15);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--ivory); font-family: 'Raleway', sans-serif; font-weight: 300; cursor: none; overflow-x: hidden; }
@@ -213,13 +214,16 @@
     /* Wave I — gold (founders) */
     .wave-i .wave-header::before { background: var(--gold); }
     .wave-i .wave-name { color: var(--gold); }
-    /* Wave II — crimson */
-    .wave-ii .wave-header::before { background: var(--crimson); }
-    .wave-ii .wave-name { color: rgba(201,168,76,0.7); }
-    /* Waves III–V — subtle silver, same underline behaviour */
-    .wave-iii .wave-header::before,
+    /* Wave II — jade (ἙΠTHEON — the pantheon) */
+    .wave-ii .wave-header::before { background: var(--jade); }
+    .wave-ii .wave-name { color: var(--jade); }
+    /* Wave III — crimson (the canon) */
+    .wave-iii .wave-header::before { background: var(--crimson); }
+    .wave-iii .wave-name { color: rgba(201,168,76,0.7); }
+    /* Waves IV–VI — subtle silver, same underline behaviour */
     .wave-iv .wave-header::before,
-    .wave-v .wave-header::before { background: rgba(154,155,159,0.4); }
+    .wave-v .wave-header::before,
+    .wave-vi .wave-header::before { background: rgba(154,155,159,0.4); }
 
     .wave-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(28px, 8vw, 52px); color: rgba(201,168,76,0.18); letter-spacing: -1px; line-height: 1; }
     .wave-name { font-family: 'Raleway', sans-serif; font-weight: 200; font-size: 10px; letter-spacing: 8px; text-indent: 8px; color: var(--gold); text-transform: uppercase; }
@@ -320,6 +324,7 @@
 
     /* ── ALL ROSTER GRIDS — uniform 2-col ── */
     .artist-grid-origin,
+    .artist-grid-pantheon,
     .artist-grid-canon,
     .artist-grid-craft,
     .artist-grid-verse,
@@ -330,6 +335,7 @@
     .artist-grid-origin .artist-card-name { font-size: clamp(28px, 7vw, 52px); letter-spacing: 4px; }
 
     /* Waves II–V — consistent 4/5 ratio, 2-col */
+    .artist-grid-pantheon .artist-card-img,
     .artist-grid-canon .artist-card-img,
     .artist-grid-craft .artist-card-img,
     .artist-grid-verse .artist-card-img,
@@ -412,6 +418,14 @@
     .modal-bio { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 2.5vw, 19px); color: rgba(240,235,225,0.72); line-height: 1.9; letter-spacing: .3px; }
     .modal-lore-label { font-family: 'Raleway', sans-serif; font-weight: 200; font-size: 8px; letter-spacing: 6px; color: rgba(201,168,76,0.4); text-transform: uppercase; margin-top: 8px; }
     .modal-lore { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(14px, 2vw, 17px); color: rgba(240,235,225,0.4); line-height: 1.9; }
+    /* ── MODAL ROSTER LIST — for multi-member groups like ἙΠTHEON ── */
+    .modal-roster-label { font-family: 'Raleway', sans-serif; font-weight: 200; font-size: 8px; letter-spacing: 6px; color: rgba(201,168,76,0.4); text-transform: uppercase; margin-top: 8px; }
+    .modal-roster-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    .modal-roster-item { display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(154,155,159,0.06); }
+    .modal-roster-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .modal-roster-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 11px; color: rgba(201,168,76,0.4); letter-spacing: 1px; flex-shrink: 0; width: 20px; }
+    .modal-roster-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 2vw, 19px); color: var(--ivory); letter-spacing: .5px; flex-shrink: 0; }
+    .modal-roster-epithet { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(12px, 1.5vw, 14px); color: rgba(240,235,225,0.4); line-height: 1.5; }
     .modal-handle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(15px, 2vw, 18px); color: var(--gold); letter-spacing: 1px; margin-top: 4px; }
     .modal-close { position: absolute; top: 22px; right: 28px; background: none; border: none; cursor: none; font-family: 'Raleway', sans-serif; font-weight: 200; font-size: 9px; letter-spacing: 4px; color: rgba(154,155,159,0.4); text-transform: uppercase; transition: color .3s ease; z-index: 10; }
     .modal-close:hover { color: var(--crimson); }
@@ -724,6 +738,8 @@
         <p class="modal-bio" id="modalBio"></p>
         <p class="modal-lore-label" id="modalLoreLabel" style="display:none;">Mnemosyne Lore</p>
         <p class="modal-lore" id="modalLore" style="display:none;"></p>
+        <p class="modal-roster-label" id="modalRosterLabel" style="display:none;">The Seven</p>
+        <div class="modal-roster-list" id="modalRosterList" style="display:none;"></div>
         <p class="modal-handle" id="modalHandle"></p>
       </div>
       <button class="modal-close" onclick="closeModalBtn()">✕ &nbsp;close</button>
@@ -782,6 +798,7 @@
     <div class="marquee-track">
       <span class="marquee-item">CI-EL</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">AUGUST</span><span class="marquee-item gold">·</span>
+      <span class="marquee-item">ἙΠTHEON</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">ERIS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">JASS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">VI</span><span class="marquee-item gold">·</span>
@@ -800,6 +817,7 @@
       <span class="marquee-item">artist-owned · in-house · independent</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">CI-EL</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">AUGUST</span><span class="marquee-item gold">·</span>
+      <span class="marquee-item">ἙΠTHEON</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">ERIS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">JASS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">VI</span><span class="marquee-item gold">·</span>
@@ -866,36 +884,43 @@
         </div>
       </div>
 
-      <!-- II — THE CANON -->
+      <!-- II — THE PANTHEON -->
       <div class="wave wave-ii reveal">
-        <div class="wave-header"><span class="wave-num">II</span><span class="wave-name">The Canon</span></div>
-        <div class="artist-grid-canon">
-          <div class="artist-card group" onclick="openModal('The Canon','ERIS','Group','Five voices that rose together and refused to stay quiet. AIVEN, EVREN, NIVEN, SEREN, CELENE — each one a different edge of the same sound.','Shaped beneath Artemis\'s gaze yet denied the wings they were promised, ERIS rose as the flaw heaven could not erase. Five voices forged into radiant, corrupted light. Through music, they carve their revenge into every note.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png')">
-            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png" alt="ERIS" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">03</span><span class="artist-card-name">ERIS</span><span class="artist-card-role">Group</span></div>
-            <span class="artist-card-hint">View</span>
-          </div>
-          <div class="artist-card solo" onclick="openModal('The Canon','JASS','Artist · Songwriter','A voice that has always been hers. She travelled to Korea to pursue her love for Korean music and fulfill her goal as a freelance songwriter and international artist.','A progeny of Athena, she carries wisdom and peace like an armor. Graceful yet stern, a woman who fights in front. Her sphere is her nous — the ability to reason and strategize.','@jassaely','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423108/jass_n78pfe.jpg')">
-            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423108/jass_n78pfe.jpg" alt="JASS" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">04</span><span class="artist-card-name">JASS</span><span class="artist-card-role">Artist · Songwriter</span></div>
-            <span class="artist-card-hint">View</span>
-          </div>
-          <div class="artist-card solo" onclick="openModal('The Canon','VI','Artist · Producer','Soft as petals, untamed as nature. Ferocious yet charming, VI dominates the stage with lethal performance and playful confidence.','Vi emerged from the crumpled stalk of violet that Persephone planted where death and spring pressed closest together. Vi carries both the melody of the dead and the living.','@violetisblue','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423151/vi_oei7fu.jpg')">
-            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423151/vi_oei7fu.jpg" alt="VI" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">05</span><span class="artist-card-name">VI</span><span class="artist-card-role">Artist · Producer</span></div>
-            <span class="artist-card-hint">View</span>
-          </div>
-          <div class="artist-card solo" onclick="openModal('The Canon','BJORN','Artist · Producer','A body in motion and a sound in a speaker are the same conversation. He does not separate the disciplines. He is all of them at once.','The last descendant and reincarnation of Peitho — goddess of persuasion. His presence draws people in, blurring the line between influence and control. He exists between human and god, fully belonging to neither.','@lastbjörn','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423102/bjorn_hrn5pm.jpg')">
-            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423102/bjorn_hrn5pm.jpg" alt="BJORN" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">06</span><span class="artist-card-name">BJORN</span><span class="artist-card-role">Artist · Producer</span></div>
+        <div class="wave-header"><span class="wave-num">II</span><span class="wave-name">The Pantheon</span></div>
+        <div class="artist-grid-pantheon">
+          <div class="artist-card group" onclick="openModal('The Pantheon','ἙΠTHEON','Group','Seven from separate worlds, separate inheritances, separate tongues — who chose without being asked, without a structure demanding it to become one architecture. Remove one and the pantheon collapses. All seven, or nothing stands.','Not the name of seven gods. It is the name of one divinity shared by seven souls. The gods were appointed. These seven appointed each other. That is the only kind of divinity that holds.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg')">
+            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg" alt="ἙΠTHEON" /></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">03</span><span class="artist-card-name">ἙΠTHEON</span><span class="artist-card-role">Group · Seven Souls</span></div>
             <span class="artist-card-hint">View</span>
           </div>
         </div>
       </div>
 
-      <!-- III — THE CRAFT -->
+      <!-- III — THE CANON -->
       <div class="wave wave-iii reveal">
-        <div class="wave-header"><span class="wave-num">III</span><span class="wave-name">The Craft</span></div>
+        <div class="wave-header"><span class="wave-num">III</span><span class="wave-name">The Canon</span></div>
+        <div class="artist-grid-canon">
+          <div class="artist-card group" onclick="openModal('The Canon','ERIS','Group','Five voices that rose together and refused to stay quiet. AIVEN, EVREN, NIVEN, SEREN, CELENE — each one a different edge of the same sound.','Shaped beneath Artemis\'s gaze yet denied the wings they were promised, ERIS rose as the flaw heaven could not erase. Five voices forged into radiant, corrupted light. Through music, they carve their revenge into every note.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png')">
+            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png" alt="ERIS" /></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">04</span><span class="artist-card-name">ERIS</span><span class="artist-card-role">Group</span></div>
+            <span class="artist-card-hint">View</span>
+          </div>
+          <div class="artist-card solo" onclick="openModal('The Canon','JASS','Artist · Songwriter','A voice that has always been hers. She travelled to Korea to pursue her love for Korean music and fulfill her goal as a freelance songwriter and international artist.','A progeny of Athena, she carries wisdom and peace like an armor. Graceful yet stern, a woman who fights in front. Her sphere is her nous — the ability to reason and strategize.','@jassaely','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423108/jass_n78pfe.jpg')">
+            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423108/jass_n78pfe.jpg" alt="JASS" /></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">05</span><span class="artist-card-name">JASS</span><span class="artist-card-role">Artist · Songwriter</span></div>
+            <span class="artist-card-hint">View</span>
+          </div>
+          <div class="artist-card solo" onclick="openModal('The Canon','VI','Artist · Producer','Soft as petals, untamed as nature. Ferocious yet charming, VI dominates the stage with lethal performance and playful confidence.','Vi emerged from the crumpled stalk of violet that Persephone planted where death and spring pressed closest together. Vi carries both the melody of the dead and the living.','@violetisblue','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423151/vi_oei7fu.jpg')">
+            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423151/vi_oei7fu.jpg" alt="VI" /></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">06</span><span class="artist-card-name">VI</span><span class="artist-card-role">Artist · Producer</span></div>
+            <span class="artist-card-hint">View</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- IV — THE CRAFT -->
+      <div class="wave wave-iv reveal">
+        <div class="wave-header"><span class="wave-num">IV</span><span class="wave-name">The Craft</span></div>
         <div class="artist-grid-craft">
           <div class="artist-card solo" onclick="openModal('The Craft','ANNELIESE','Artist · Songwriter','A singer-songwriter who builds her music from the ground up — melody, lyric, and arrangement all shaped by the same hand.','Born from the lineage of Nike, Anneliese claimed the title of Goddess of Victory not by bloodright, but through the transformative power of her music. Known as The Winged Lyricist.','@annliweitz','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423096/ANNELIESE_u7tj4m.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423096/ANNELIESE_u7tj4m.jpg" alt="ANNELIESE" /></div>
@@ -920,9 +945,9 @@
         </div>
       </div>
 
-      <!-- IV — THE VERSE -->
-      <div class="wave wave-iv reveal">
-        <div class="wave-header"><span class="wave-num">IV</span><span class="wave-name">The Verse</span></div>
+      <!-- V — THE VERSE -->
+      <div class="wave wave-v reveal">
+        <div class="wave-header"><span class="wave-num">V</span><span class="wave-name">The Verse</span></div>
         <div class="artist-grid-verse">
           <div class="artist-card group" onclick="openModal('The Verse','AERA','Group','Four artists. One sound still being assembled. REA, HARBIN, DAISY, and LUNE. When they arrive, they will not ease in.','Chosen by Hera when the Black Mamba began corrupting the Digital Olympus. The Four Pillars of Hera\'s Temple — REA, HARBIN, DAISY, and LUNE. Protectors of the Digital Olympus.','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423103/aera_df8msh.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423103/aera_df8msh.png" alt="AERA" /></div>
@@ -947,9 +972,9 @@
         </div>
       </div>
 
-      <!-- V — THE ECHO -->
-      <div class="wave wave-v reveal">
-        <div class="wave-header"><span class="wave-num">V</span><span class="wave-name">The Echo</span></div>
+      <!-- VI — THE ECHO -->
+      <div class="wave wave-vi reveal">
+        <div class="wave-header"><span class="wave-num">VI</span><span class="wave-name">The Echo</span></div>
         <div class="artist-grid-echo">
           <div class="artist-card group" onclick="openModal('The Echo','SCRƗVE','Group','Something is being built. Details will follow when they are ready to be known.','','—','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423162/scrive_w7tu4s.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423162/scrive_w7tu4s.png" alt="SCRƗVE" /></div>
@@ -1416,6 +1441,19 @@
     updateParallax();
     function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); document.getElementById('hamburger').classList.toggle('open'); }
     function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.getElementById('hamburger').classList.remove('open'); }
+    // ── GROUP MEMBER DATA — for modals that need a per-member breakdown ──
+    const GROUP_MEMBERS = {
+      'ἙΠTHEON': [
+        { name: 'BJORN',   role: 'Leader',  epithet: 'last descendant of Peitho — desired, watched, unable to escape' },
+        { name: 'IAIN',    role: '',        epithet: 'blood of Proteus — keeper of a thousand forms' },
+        { name: 'SILAS',   role: '',        epithet: 'touched by Hermes — crosses every threshold' },
+        { name: 'LUC',     role: '',        epithet: 'heir of Coeus — the mind that holds the axis still' },
+        { name: 'NIKOLAI', role: '',        epithet: 'chosen by Paean — the voice that heals what it touches' },
+        { name: 'MATTEO',  role: '',        epithet: 'marked by Momus — sees through everything' },
+        { name: 'LIEV',    role: 'Maknae',  epithet: 'born of Phosphorus — the last light before morning' }
+      ]
+    };
+
     function openModal(wave, name, role, bio, lore, handle, imgSrc) {
       document.getElementById('modalWave').textContent = '— ' + wave;
       document.getElementById('modalName').textContent = name;
@@ -1426,6 +1464,27 @@
       const loreLabelEl = document.getElementById('modalLoreLabel');
       if (lore) { loreEl.textContent = lore; loreEl.style.display = ''; loreLabelEl.style.display = ''; }
       else { loreEl.textContent = ''; loreEl.style.display = 'none'; loreLabelEl.style.display = 'none'; }
+
+      // Roster list — only renders for groups defined in GROUP_MEMBERS
+      const rosterListEl = document.getElementById('modalRosterList');
+      const rosterLabelEl = document.getElementById('modalRosterLabel');
+      const members = GROUP_MEMBERS[name];
+      if (members) {
+        rosterListEl.innerHTML = members.map((m, i) => `
+          <div class="modal-roster-item">
+            <span class="modal-roster-num">${String(i + 1).padStart(2, '0')}</span>
+            <span class="modal-roster-name">${m.name}${m.role ? ' — ' + m.role : ''}</span>
+            <span class="modal-roster-epithet">${m.epithet}</span>
+          </div>`).join('');
+        rosterListEl.style.display = '';
+        rosterLabelEl.textContent = 'The Seven';
+        rosterLabelEl.style.display = '';
+      } else {
+        rosterListEl.innerHTML = '';
+        rosterListEl.style.display = 'none';
+        rosterLabelEl.style.display = 'none';
+      }
+
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -1439,7 +1498,7 @@
     const cardObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => { if (!entry.isIntersecting) return; entry.target.classList.add('grid-visible'); cardObserver.unobserve(entry.target); });
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-    document.querySelectorAll('.artist-grid-origin, .artist-grid-canon, .artist-grid-craft, .artist-grid-verse, .artist-grid-echo, .catalog-hero, .catalog-secondary').forEach(el => cardObserver.observe(el));
+    document.querySelectorAll('.artist-grid-origin, .artist-grid-pantheon, .artist-grid-canon, .artist-grid-craft, .artist-grid-verse, .artist-grid-echo, .catalog-hero, .catalog-secondary').forEach(el => cardObserver.observe(el));
     // ── IMAGE BLUR-UP — soft load ──
     document.querySelectorAll('.artist-card-img img, .catalog-feature-img img, .leader-photo img, .dept-photo img').forEach(img => {
       if (img.complete) { img.classList.add('loaded'); }
