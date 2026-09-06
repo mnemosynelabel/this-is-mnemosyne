@@ -641,11 +641,6 @@
     .leader-card:hover::before { transform: scaleX(1); }
 
     @media (max-width: 768px) {
-      .leadership-solo { grid-template-columns: 1fr; }
-      .leadership-solo .leader-photo { aspect-ratio: 4/5; }
-      .leader-text-panel { aspect-ratio: auto; min-height: 300px; padding: 32px 28px 32px; }
-      .leader-text-panel-name { font-size: clamp(32px, 10vw, 56px); letter-spacing: -1px; }
-      .leader-text-panel-logo { width: clamp(36px, 9vw, 52px); margin-bottom: 24px; }
       .leadership-row .leader-role { font-size: 9px; letter-spacing: 3px; }
     }
     .dept-block { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid rgba(154,155,159,0.06); }
@@ -810,6 +805,7 @@
       <span class="marquee-item">CI-EL</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">AUGUST</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">ἙΠTHEON</span><span class="marquee-item gold">·</span>
+      <span class="marquee-item">VIIXE</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">ERIS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">JASS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">VI</span><span class="marquee-item gold">·</span>
@@ -829,6 +825,7 @@
       <span class="marquee-item">CI-EL</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">AUGUST</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">ἙΠTHEON</span><span class="marquee-item gold">·</span>
+      <span class="marquee-item">VIIXE</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">ERIS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">JASS</span><span class="marquee-item gold">·</span>
       <span class="marquee-item">VI</span><span class="marquee-item gold">·</span>
@@ -871,7 +868,7 @@
         <div class="reveal-left"><h2 class="section-heading">Roster</h2></div>
         <div class="reveal-right" style="display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:16px;">
           <div class="roster-count">
-            <span class="roster-count-num">16</span>
+            <span class="roster-count-num">17</span>
             <span class="roster-count-label">Artists</span>
           </div>
           <p class="roster-intro-text" style="text-align:right;max-width:320px;">artists who create everything — the sound, the image, the story, the rights.</p>
@@ -897,11 +894,16 @@
 
       <!-- II — THE PANTHEON -->
       <div class="wave wave-ii reveal">
-        <div class="wave-header"><span class="wave-num">II</span><span class="wave-name">The Pantheon</span></div>
+        <div class="wave-header"><span class="wave-num">II</span><span class="wave-name">The Assembly</span></div>
         <div class="artist-grid-pantheon">
-          <div class="artist-card group" onclick="openModal('The Pantheon','ἙΠTHEON','Group','Seven from separate worlds, separate inheritances, separate tongues — who chose without being asked, without a structure demanding it to become one architecture. Remove one and the pantheon collapses. All seven, or nothing stands.','Not the name of seven gods. It is the name of one divinity shared by seven souls. The gods were appointed. These seven appointed each other. That is the only kind of divinity that holds.','@heptheon.official','https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg')">
+          <div class="artist-card group" onclick="openModal('The Assembly','ἙΠTHEON','Group','Seven from separate worlds, separate inheritances, separate tongues — who chose without being asked, without a structure demanding it to become one architecture. Remove one and the pantheon collapses. All seven, or nothing stands.','Not the name of seven gods. It is the name of one divinity shared by seven souls. The gods were appointed. These seven appointed each other. That is the only kind of divinity that holds.','@heptheon.official','https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1787649646/heptheon_b9k7uc.jpg" alt="ἙΠTHEON" /></div>
             <div class="artist-card-overlay"><span class="artist-card-num">03</span><span class="artist-card-name">ἙΠTHEON</span><span class="artist-card-role">Group · Seven Souls</span></div>
+            <span class="artist-card-hint">View</span>
+          </div>
+          <div class="artist-card group" onclick="openModal('The Assembly','VIIXE','Group','Seven women once condemned as witches, now risen as symbols of defiance and rebirth. VIIXE — the Roman numeral for seven, fused with the Latin vixī: I have lived.','Survival written into the name itself. What was meant to end them became the thing they rose from — seven voices carrying the weight of what they were called, and refusing to let it be the last word.','@officialviixe','https://res.cloudinary.com/dksgl7zjr/image/upload/v1788687070/viixe_sjcty4.png')">
+            <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1788687070/viixe_sjcty4.png" alt="VIIXE" /></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">04</span><span class="artist-card-name">VIIXE</span><span class="artist-card-role">Group · Seven Risen</span></div>
             <span class="artist-card-hint">View</span>
           </div>
         </div>
@@ -913,17 +915,17 @@
         <div class="artist-grid-canon">
           <div class="artist-card group" onclick="openModal('The Canon','ERIS','Group','Five voices that rose together and refused to stay quiet. AIVEN, EVREN, NIVEN, SEREN, CELENE — each one a different edge of the same sound.','Shaped beneath Artemis\'s gaze yet denied the wings they were promised, ERIS rose as the flaw heaven could not erase. Five voices forged into radiant, corrupted light. Through music, they carve their revenge into every note.','@eris.mnm','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423224/eris_dhe8h3.png" alt="ERIS" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">04</span><span class="artist-card-name">ERIS</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">05</span><span class="artist-card-name">ERIS</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card solo" onclick="openModal('The Canon','JASS','Artist · Songwriter','A voice that has always been hers. She travelled to Korea to pursue her love for Korean music and fulfill her goal as a freelance songwriter and international artist.','A progeny of Athena, she carries wisdom and peace like an armor. Graceful yet stern, a woman who fights in front. Her sphere is her nous — the ability to reason and strategize.','@jassaely','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423108/jass_n78pfe.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423108/jass_n78pfe.jpg" alt="JASS" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">05</span><span class="artist-card-name">JASS</span><span class="artist-card-role">Artist · Songwriter</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">06</span><span class="artist-card-name">JASS</span><span class="artist-card-role">Artist · Songwriter</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card solo" onclick="openModal('The Canon','VI','Artist · Producer','Soft as petals, untamed as nature. Ferocious yet charming, VI dominates the stage with lethal performance and playful confidence.','Vi emerged from the crumpled stalk of violet that Persephone planted where death and spring pressed closest together. Vi carries both the melody of the dead and the living.','@violetisblue','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423151/vi_oei7fu.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423151/vi_oei7fu.jpg" alt="VI" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">06</span><span class="artist-card-name">VI</span><span class="artist-card-role">Artist · Producer</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">07</span><span class="artist-card-name">VI</span><span class="artist-card-role">Artist · Producer</span></div>
             <span class="artist-card-hint">View</span>
           </div>
         </div>
@@ -935,22 +937,22 @@
         <div class="artist-grid-craft">
           <div class="artist-card solo" onclick="openModal('The Craft','ANNELIESE','Artist · Songwriter','A singer-songwriter who builds her music from the ground up — melody, lyric, and arrangement all shaped by the same hand.','Born from the lineage of Nike, Anneliese claimed the title of Goddess of Victory not by bloodright, but through the transformative power of her music. Known as The Winged Lyricist.','@annliweitz','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423096/ANNELIESE_u7tj4m.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423096/ANNELIESE_u7tj4m.jpg" alt="ANNELIESE" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">07</span><span class="artist-card-name">ANNELIESE</span><span class="artist-card-role">Artist · Songwriter</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">08</span><span class="artist-card-name">ANNELIESE</span><span class="artist-card-role">Artist · Songwriter</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card solo" onclick="openModal('The Craft','LILA','Artist · Songwriter','Thai artist based in South Korea. A pianist at heart — she writes and composes her music, weaving her voice into both her own releases and the stories she helps bring to life.','Chosen by Persephone as the space where brightness and darkness could both exist. Her music moves in two voices — one blooming with light and one steeped in shadow.','@lilalaland','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423112/LILA_hzxzid.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423112/LILA_hzxzid.jpg" alt="LILA" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">08</span><span class="artist-card-name">LILA</span><span class="artist-card-role">Artist · Songwriter</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">09</span><span class="artist-card-name">LILA</span><span class="artist-card-role">Artist · Songwriter</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card solo" onclick="openModal('The Craft','VAUN','Artist · Songwriter','A visual artist and songwriter who moves between disciplines without needing to justify it. Her music is fluid, layered, and emotionally exact.','Vaun carries the lingering imprint of Dionysus — a fragment of divine chaos that distorts everything she creates into something unstable, vivid, and alive.','@evidusk','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423150/VAUN_wzpty3.jpg')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423150/VAUN_wzpty3.jpg" alt="VAUN" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">09</span><span class="artist-card-name">VAUN</span><span class="artist-card-role">Artist · Songwriter</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">10</span><span class="artist-card-name">VAUN</span><span class="artist-card-role">Artist · Songwriter</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card group" onclick="openModal('The Craft','ODYSIXX','Group','Six travelers arrived at a shoreline that appears on no map, each carrying a different kind of knowing — direction, language, sight, healing, questioning, and the architecture of how things work.','They were not made to be together. The sea decided otherwise. The journey toward Ithaca is not a straight line — the greatest voyage is not across the water, but into the self. They do not know exactly where Ithaca is. They know only that they are closer than they were, and that they are moving together.','@odysixxs','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423144/odysixx_ndllbe.png','https://odysixx.mnemosynekr.top')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423144/odysixx_ndllbe.png" alt="ODYSIXX" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">10</span><span class="artist-card-name">ODYSIXX</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">11</span><span class="artist-card-name">ODYSIXX</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
         </div>
@@ -962,22 +964,22 @@
         <div class="artist-grid-verse">
           <div class="artist-card group" onclick="openModal('The Verse','AERA','Group','Four artists. One sound still being assembled. REA, HARBIN, DAISY, and LUNE. When they arrive, they will not ease in.','Chosen by Hera when the Black Mamba began corrupting the Digital Olympus. The Four Pillars of Hera\'s Temple — REA, HARBIN, DAISY, and LUNE. Protectors of the Digital Olympus.','@aerathelastsynk','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423103/aera_df8msh.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423103/aera_df8msh.png" alt="AERA" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">11</span><span class="artist-card-name">AERA</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">12</span><span class="artist-card-name">AERA</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card group" onclick="openModal('The Verse','ØISYZ','Group','Four voices shaped from shared ache. YNES, MINTY, MIA, and BONNIE. They make music for everything that never gets said out loud.','A four-member group formed from the lingering presence of Oizys. YNES, MINTY, MIA, and BONNIE — each carrying a different shade of hidden emotion. Through their music, ØISYZ turns what aches into sound.','@oisyz.mnm','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423147/oisyz_nenhh9.png','https://oisyz.mnemosynekr.top')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423147/oisyz_nenhh9.png" alt="ØISYZ" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">12</span><span class="artist-card-name">ØISYZ</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">13</span><span class="artist-card-name">ØISYZ</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card group" onclick="openModal('The Verse','RITZY','Group','A five-member girl group. Confident image, strong individuality, dynamic performances. Blending pop, hip-hop, and dance-driven sounds — themes of feminine confidence, self-expression, and authenticity.','Descendants of Ares awakened beneath a crimson moon. Each inherited a fragment of the war god\'s power: courage, instinct, rebellion, ambition, and conquest. Together, they became RITZY — the Crimson Thieves.','@ritzy.all.in.us','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423150/ritzy_jmmvfy.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423150/ritzy_jmmvfy.png" alt="RITZY" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">13</span><span class="artist-card-name">RITZY</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">14</span><span class="artist-card-name">RITZY</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card group" onclick="openModal('The Verse','ALETHBL','Group','Five members. One vessel. YUAN. JAXON. GUWON. CAIO. SE. Five voices, one vessel — each member a distinct presence, together something larger than any name for it.','Named for Aletheia — Ἀλήθεια — the goddess of truth and disclosure. Her name means unconcealedness. Not truth as something spoken. Truth as something that can no longer stay hidden. ἡ ἀλήθεια φωνή ἐστιν. truth is a voice.','@alethbl.mnm','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423127/alethbl_pjvakk.png','https://alethbl.mnemosynekr.top')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423127/alethbl_pjvakk.png" alt="ALETHBL" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">14</span><span class="artist-card-name">ALETHBL</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">15</span><span class="artist-card-name">ALETHBL</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
         </div>
@@ -989,12 +991,12 @@
         <div class="artist-grid-echo">
           <div class="artist-card group" onclick="openModal('The Echo','SCRƗVE','Group','The Moirai spin, measure, and cut — length was never theirs to change. But length is not meaning. What a thread holds as it runs, what it becomes once it is cut — that belongs to memory. That belongs to Mnemosyne.','SCRƗVE — from scrivener: one entrusted to write, to inscribe, to keep record. Six were given a thread like anyone else. What set them apart is what they were called to do with it — not to alter where it ends, but to make sure nothing carried along it is ever lost. Not defiance. An appointment.','@scrive.official','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423162/scrive_w7tu4s.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423162/scrive_w7tu4s.png" alt="SCRƗVE" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">15</span><span class="artist-card-name">SCRƗVE</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">16</span><span class="artist-card-name">SCRƗVE</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
           <div class="artist-card group" onclick="openModal('The Echo','DAL·IΛ','Group','When reality fractured into infinite timelines, AION created a single celestial body — DAL, a moon never meant to complete its orbit. Those chosen by DAL awaken as DAL·IΛ, beings who carry echoes of countless alternate selves.','Their mission is not to protect one timeline, but to preserve the balance between all of them. AION divided them into three sacred Orders — The First Dawn, who ignite what begins; The Eternal Moon, who keep what survives; The Endless Eclipse, who guide what must transform.','@dal.iaxxofficial','https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423120/dalia_trzdyx.png')">
             <div class="artist-card-img"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423120/dalia_trzdyx.png" alt="DAL·IΛ" /></div>
-            <div class="artist-card-overlay"><span class="artist-card-num">16</span><span class="artist-card-name">DAL·IΛ</span><span class="artist-card-role">Group</span></div>
+            <div class="artist-card-overlay"><span class="artist-card-num">17</span><span class="artist-card-name">DAL·IΛ</span><span class="artist-card-role">Group</span></div>
             <span class="artist-card-hint">View</span>
           </div>
         </div>
@@ -1173,7 +1175,7 @@
           <div class="about-stat"><p class="stat-label">Founded</p><p class="stat-value gold">2026</p></div>
           <div class="about-stat"><p class="stat-label">Headquarters</p><p class="stat-value">Seoul</p></div>
           <div class="about-stat"><p class="stat-label">Reach</p><p class="stat-value">International</p></div>
-          <div class="about-stat"><p class="stat-label">Artists</p><p class="stat-value gold">16</p></div>
+          <div class="about-stat"><p class="stat-label">Artists</p><p class="stat-value gold">17</p></div>
           <div class="about-stat"><p class="stat-label">Model</p><p class="stat-value" style="font-size:clamp(16px,1.8vw,26px);letter-spacing:0;line-height:1.5;">Artist-owned.<br/>In-house.<br/>Independent.</p></div>
         </div>
       </div>
@@ -1183,40 +1185,28 @@
         <div class="staff-block">
           <p class="staff-block-label">Leadership</p>
 
-          <!-- CI-EL + text panel -->
-          <div class="leadership-solo">
+          <!-- Row 1: CI-EL + AIVEN -->
+          <div class="leadership-row">
             <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423111/ciel_bikgi9.png" alt="CI-EL" /></div><div class="leader-info"><span class="leader-role">CEO &amp; Creative Director · Co-Founder</span><span class="leader-name">CI-EL</span></div></div>
-            <div class="leader-text-panel">
-              <div class="leader-text-panel-top">
-                <img src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423122/mnm_logo_vzqdvs.png" alt="Mnemosyne" class="leader-text-panel-logo" />
-                <span class="leader-text-panel-eyebrow">Leadership</span>
-                <p class="leader-text-panel-name">MNEMOSYNE</p>
-                <div class="leader-text-panel-rule"></div>
-                <p class="leader-text-panel-body">Built by artists. Led by artists. Every decision made from inside the work.</p>
-              </div>
-              <div class="leader-text-panel-bottom">
-                <span class="leader-text-panel-meta">Seoul · Est. 2026</span>
-                <span class="leader-text-panel-meta">Independent · In-House</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 1: AIVEN + VI -->
-          <div class="leadership-row">
             <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423097/aiven_k051ma.png" alt="AIVEN" /></div><div class="leader-info"><span class="leader-role">A&amp;R &amp; Artist Relations</span><span class="leader-name">AIVEN</span></div></div>
+          </div>
+
+          <!-- Row 2: VI + NARI -->
+          <div class="leadership-row">
             <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423151/vi_oei7fu.jpg" alt="VI" /></div><div class="leader-info"><span class="leader-role">Head of Artistry</span><span class="leader-name">VI</span></div></div>
-          </div>
-
-          <!-- Row 2: NARI + AUGUST -->
-          <div class="leadership-row">
             <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1787667424/nari_2_kcdstn.jpg" alt="NARI" /></div><div class="leader-info"><span class="leader-role">Media &amp; Communications</span><span class="leader-name">NARI</span></div></div>
-            <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423104/august_v8epxc.jpg" alt="AUGUST" /></div><div class="leader-info"><span class="leader-role">Head of Production · Co-Founder</span><span class="leader-name">AUGUST</span></div></div>
           </div>
 
-          <!-- Row 3: REA + JASS -->
+          <!-- Row 3: AUGUST + REA -->
           <div class="leadership-row">
+            <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423104/august_v8epxc.jpg" alt="AUGUST" /></div><div class="leader-info"><span class="leader-role">Head of Production · Co-Founder</span><span class="leader-name">AUGUST</span></div></div>
             <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423147/rea_tg5odp.png" alt="REA" /></div><div class="leader-info"><span class="leader-role">Performance Director</span><span class="leader-name">REA</span></div></div>
+          </div>
+
+          <!-- Row 4: JASS + VAUN -->
+          <div class="leadership-row">
             <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423108/jass_n78pfe.jpg" alt="JASS" /></div><div class="leader-info"><span class="leader-role">Director of External Affairs</span><span class="leader-name">JASS</span></div></div>
+            <div class="leader-card"><div class="leader-photo"><img loading="lazy" src="https://res.cloudinary.com/dksgl7zjr/image/upload/v1783423150/VAUN_wzpty3.jpg" alt="VAUN" /></div><div class="leader-info"><span class="leader-role">Visual Director</span><span class="leader-name">VAUN</span></div></div>
           </div>
         </div>
 
@@ -1462,6 +1452,15 @@
         { name: 'NIKOLAI', role: '',        epithet: 'chosen by Paean — the voice that heals what it touches' },
         { name: 'MATTEO',  role: '',        epithet: 'marked by Momus — sees through everything' },
         { name: 'LIEV',    role: 'Maknae',  epithet: 'born of Phosphorus — the last light before morning' }
+      ],
+      'VIIXE': [
+        { name: 'LILLI',   role: '', epithet: '' },
+        { name: 'EVELYNN', role: '', epithet: '' },
+        { name: 'ARLE',    role: '', epithet: '' },
+        { name: 'IORI',    role: '', epithet: '' },
+        { name: 'RUE',     role: '', epithet: '' },
+        { name: 'VAL',     role: '', epithet: '' },
+        { name: 'R',       role: '', epithet: '' }
       ]
     };
 
@@ -1489,7 +1488,7 @@
           <div class="modal-roster-item">
             <span class="modal-roster-num">${String(i + 1).padStart(2, '0')}</span>
             <span class="modal-roster-name">${m.name}${m.role ? ' — ' + m.role : ''}</span>
-            <span class="modal-roster-epithet">${m.epithet}</span>
+            ${m.epithet ? `<span class="modal-roster-epithet">${m.epithet}</span>` : ''}
           </div>`).join('');
         rosterListEl.style.display = '';
         rosterLabelEl.textContent = 'The Seven';
